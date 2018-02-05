@@ -1,0 +1,13 @@
+server:
+  port: 8010
+
+
+#为服务架构的服务注册和发现 ,有界面的，启动工程,打开浏览器访问： http://localhost:port
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false  #表示是否将自己注册到Eureka service
+    fetchRegistry: false       #表示是否从Eureka Server获取注册信息,默认为true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
